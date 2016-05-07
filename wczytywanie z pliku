@@ -1,0 +1,12 @@
+tab=[]
+count = -1
+for count, wiersz in enumerate(open('plik', 'rU')):
+	pass
+count += 1
+print count
+x=0
+while x<count
+	import linecache
+	wiersz = linecache.getline('NAZWA PLIKU', NUMER_WIERSZA)
+	tab.append(wiersz)
+	x=x+1
