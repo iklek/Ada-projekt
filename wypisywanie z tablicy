@@ -1,0 +1,12 @@
+tab=[]
+n=input("podaj ilosc elementow w tablicy")
+x=1
+print 'podaj liczby'
+while x<n+1:
+    i=input()
+    tab.append(i)
+    x=x+1
+x=0
+while x<n+1:
+    print tab[x]
+    x=x+1
