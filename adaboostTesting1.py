@@ -2,12 +2,16 @@ import numpy as math
 from sklearn.ensemble import AdaBoostClassifier as AdaBoost
 from sklearn.tree import DecisionTreeClassifier as DecTree
 
-X = [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9]]
-Y = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
-Z = [[8], [9], [10], [11], [12]]
+X = [[0, 2, 4, 6, 8], [1, 3, 5, 7, 9], [7, 9, 11, 13, 15], [6, 8, 10, 12, 14]]
+Y = [1, 0, 0, 1]
+Z = [[8, 9, 10, 14, 15], [4, 5, 7, 11, 13], [4, 6, 8, 10, 12],  [3, 5, 7, 9, 11]]
 
-ada = AdaBoost()
+ada = AdaBoost(DecTree(max_depth=1))
 ada.fit(X, Y)
 
-pr = ada.predict(Z)
-print(pr)
+print("Predict: ")
+print(ada.predict(Z))
+print("Probabil: ")
+print(ada.predict_proba(Z))
+print("Score: ")
+print(ada.score(Z, [1, 0, 1, 0]))
